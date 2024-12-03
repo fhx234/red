@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红旅探索</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #fff, #f7f7f7);
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0 0 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .search-container {
+            margin: 20px auto;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .search-container input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-container button {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            background: #c0392b;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .search-container button:hover {
+            background: #a93226;
+        }
+
+        .section {
+            margin: 20px auto;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section:nth-child(1) {
+            background-color: #f9ebea;
+        }
+
+        .section:nth-child(2) {
+            background-color: #fdebd0;
+        }
+
+        .section:nth-child(3) {
+            background-color: #e8f8f5;
+        }
+
+        .section:nth-child(4) {
+            background-color: #eaf2f8;
+        }
+
+        .section:nth-child(5) {
+            background-color: #f5eef8;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #c0392b;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            margin: 10px 0 20px;
+            color: #666;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #c0392b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background: #a93226;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            .section h2 {
+                font-size: 1.8em;
+            }
+
+            .section p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>红旅探索</h1>
+        <p>探索中国革命的光辉历史</p>
+        <!-- 修改为表单 -->
+        <form action="https://www.google.com/search" method="get" class="search-container" target="_blank">
+            <input type="text" name="q" placeholder="Search our tutorials, e.g. HTML">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+
+    <section class="section">
+        <h2>红色历史</h2>
+        <p>了解中国革命的重要历史事件</p>
+        <a href="history.html" class="button">了解更多</a>
+    </section>
+
+    <section class="section">
+        <h2>经典路线</h2>
+        <p>发现红色旅游的经典路线和景点</p>
+        <a href="routes.html" class="button">了解更多</a>
+    </section>
+
+    <section class="section">
+        <h2>红色文化</h2>
+        <p>感受革命文化的精神内涵</p>
+        <a href="culture.html" class="button">了解更多</a>
+    </section>
+
+    <section class="section">
+        <h2>红色故事</h2>
+        <p>了解革命人物的生平与故事</p>
+        <a href="stories.html" class="button">了解更多</a>
+    </section>
+
+    <section class="section">
+        <h2>红色遗产</h2>
+        <p>探索革命遗址和纪念建筑</p>
+        <a href="heritage.html" class="button">了解更多</a>
+    </section>
+
+    <footer>
+        <p>© 2024 红旅探索 | 保留所有权利</p>
+    </footer>
+</body>
+</html>

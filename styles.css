@@ -1,0 +1,109 @@
+/* 通用样式 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* 板块样式 */
+.section {
+    padding: 2rem 1rem;
+    text-align: center;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/pattern.svg"); /* 替换为你的装饰图案路径 */
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.red-history {
+    background: #fdebd0;
+}
+
+.classic-routes {
+    background: #2c3e50;
+    color: #ecf0f1;
+}
+
+.red-culture {
+    background: #fdebd0;
+}
+
+.red-stories {
+    background: #f5b7b1;
+}
+
+.red-heritage {
+    background: #85c1e9;
+}
+
+.section h2, .section p, .button {
+    position: relative;
+    z-index: 1;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.button {
+    background: #e74c3c;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background: #c0392b;
+}
+
+/* 分割线 */
+.section:not(:last-child) {
+    border-bottom: 5px dashed #eaeaea;
+}
+
+/* 页脚 */
+.footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+}

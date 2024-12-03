@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红色历史</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 弹窗的背景样式 */
+        .popup {
+            display: none; /* 默认隐藏 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* 弹窗内容 */
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 关闭按钮 */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: red;
+        }
+
+        /* 历史项目样式 */
+        .history-item {
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .history-item:hover {
+            transform: scale(1.05);
+        }
+
+        .history-photo {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* 历史部分样式 */
+        .history-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* 历史项目容器 */
+        .history-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 脚注样式 */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>红色历史</h1>
+        <p>回顾革命历史，缅怀伟大人物</p>
+    </header>
+    <main class="history-content">
+        <div class="history-container">
+            <section class="history-section">
+                <article class="history-item" onclick="showPopup('马克思', '马克思是共产主义的奠基人之一，提出了辩证唯物主义和历史唯物主义。')">
+                    <img src="images/marx.jpg" alt="马克思" class="history-photo">
+                    <h2>马克思</h2>
+                    <p>马克思是共产主义的奠基人之一。</p>
+                </article>
+                <article class="history-item" onclick="showPopup('毛泽东', '毛泽东是中国革命的伟大领导者，带领中国人民走向解放。')">
+                    <img src="images/mao.jpg" alt="毛泽东" class="history-photo">
+                    <h2>毛泽东</h2>
+                    <p>毛泽东是中国革命的伟大领导者。</p>
+                </article>
+                <article class="history-item" onclick="showPopup('周恩来', '周恩来是中国共产党的重要领导人，致力于新中国的建设。')">
+                    <img src="images/zhou.jpg" alt="周恩来" class="history-photo">
+                    <h2>周恩来</h2>
+                    <p>周恩来是中国共产党的重要领导人。</p>
+                </article>
+                <article class="history-item" onclick="showPopup('朱德', '朱德是中国人民解放军的主要创建人之一，被誉为“红军之父”。')">
+                    <img src="images/zhude.jpg" alt="朱德" class="history-photo">
+                    <h2>朱德</h2>
+                    <p>朱德是中国人民解放军的主要创建人之一。</p>
+                </article>
+                <article class="history-item" onclick="showPopup('邓小平', '邓小平是中国改革开放的总设计师，推动了中国的现代化进程。')">
+                    <img src="images/dengxiaoping.jpg" alt="邓小平" class="history-photo">
+                    <h2>邓小平</h2>
+                    <p>邓小平是中国改革开放的总设计师。</p>
+                </article>
+                <article class="history-item" onclick="showPopup('刘少奇', '刘少奇是中国共产党的重要领导人，为新中国的发展做出了重要贡献。')">
+                    <img src="images/liushaoqi.jpg" alt="刘少奇" class="history-photo">
+                    <h2>刘少奇</h2>
+                    <p>刘少奇是中国共产党的重要领导人。</p>
+                </article>
+                <article class="history-item" onclick="showPopup('陈毅', '陈毅是中国人民解放军的重要将领，为新中国的成立做出了巨大贡献。')">
+                    <img src="images/chenyi.jpg" alt="陈毅" class="history-photo">
+                    <h2>陈毅</h2>
+                    <p>陈毅是中国人民解放军的重要将领。</p>
+                </article>
+                <article class="history-item" onclick="showPopup('彭德怀', '彭德怀是中国人民解放军的重要将领，被誉为“百战百胜的将军”。')">
+                    <img src="images/pengdehuai.jpg" alt="彭德怀" class="history-photo">
+                    <h2>彭德怀</h2>
+                    <p>彭德怀是中国人民解放军的重要将领。</p>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 红旅主题网站</p>
+    </footer>
+
+    <!-- 弹窗 -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2 id="popup-title">人物名称</h2>
+            <p id="popup-text">人物的详细信息。</p>
+        </div>
+    </div>
+
+    <script>
+        function showPopup(title, text) {
+            document.getElementById('popup-title').innerText = title;
+            document.getElementById('popup-text').innerText = text;
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
